@@ -37,9 +37,9 @@ const createNotificationTicket = async (data) => {
   }
 };
 
-const updateTicket = async (status) => {
+const updateTicket = async (ticketId, status) => {
   try {
-    const response = await repo.update({ status: "PENDING" });
+    const response = await repo.update(ticketId, status);
     return response;
   } catch (error) {
     console.log(error);
